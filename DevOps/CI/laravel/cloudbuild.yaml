@@ -5,5 +5,5 @@ steps:
   args: ['-f', 'DevOps/CI/laravel/docker-compose.cloudbuild.yaml', 'up', '-d']
 
 - id: "Rodando docker ps"
-  name: 'gcr.io/cloud-builds/docker'
+  name: 'gcr.io/cloud-builders/docker'
   args: ['ps']
