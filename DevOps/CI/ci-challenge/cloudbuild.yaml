@@ -1,5 +1,5 @@
 steps:
 
-    - id: "Rodando programa"
-    name: 'gcr.io/cloud-builders/go'
-    args: ['run', 'DevOps/CI/ci-challenge/src/main.go']
+- id: "Rodando programa"
+  name: 'gcr.io/cloud-builders/go'
+  args: ['run', 'DevOps/CI/ci-challenge/src/main.go']
