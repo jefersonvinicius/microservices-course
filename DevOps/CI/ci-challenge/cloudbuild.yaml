@@ -3,3 +3,5 @@ steps:
 - id: "Rodando programa"
   name: 'gcr.io/cloud-builders/go'
   args: ['run', 'DevOps/CI/ci-challenge/src/main.go']
+  env: 
+    - 'GOPATH=$PWD'
