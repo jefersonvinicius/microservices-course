@@ -1,7 +1,9 @@
 steps:
 
-- id: "Rodando programa"
-  name: 'gcr.io/cloud-builders/go'
-  args: ['run', 'DevOps/CI/ci-challenge/src/main.go']
-  env: 
-    - 'GOPATH=$PWD'
+- id: "Fazendo build do programa"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gochallenge', '.']
+
+- id: "Executando programa"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['run', 'gochallenge']
