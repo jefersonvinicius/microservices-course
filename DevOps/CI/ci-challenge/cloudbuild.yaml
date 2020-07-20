@@ -2,7 +2,7 @@ steps:
 
 - id: "Fazendo build do programa"
   name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gochallenge', '/DevOps/CI/ci-challenge/Dockerfile']
+  args: ['build', '-t', 'gochallenge', 'DevOps/CI/ci-challenge/Dockerfile']
 
 - id: "Executando programa"
   name: 'gcr.io/cloud-builders/docker'
