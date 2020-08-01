@@ -7,7 +7,7 @@ steps:
 - id: "Executando testes"
   name: 'gcr.io/cloud-builders/go'
   args: ['--version']
-  env: ['GOPATH=$PWD']
+  env: ['GOPATH=DevOps/CI/ci-challenge/src']
 
 - id: "Executando programa"
   name: 'gcr.io/cloud-builders/docker'
