@@ -6,7 +6,7 @@ steps:
 
 - id: "Executando testes"
   name: 'gcr.io/cloud-builders/go'
-  args: ['test', '-v', './calculator/']
+  args: ['test', '-v', 'DevOps/CI/ci-challenge/src/calculator']
   env: ['GOPATH=DevOps/CI/ci-challenge/src']
 
 - id: "Executando programa"
