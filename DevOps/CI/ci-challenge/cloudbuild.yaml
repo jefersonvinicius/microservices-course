@@ -4,6 +4,11 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gochallenge', 'DevOps/CI/ci-challenge/']
 
+- id: "Executando testes"
+  name: 'gcr.io/cloud-builders/go'
+  args: ['--version']
+
+
 - id: "Executando programa"
   name: 'gcr.io/cloud-builders/docker'
   args: ['run', 'gochallenge']
