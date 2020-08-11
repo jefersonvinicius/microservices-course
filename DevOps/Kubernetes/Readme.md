@@ -38,3 +38,49 @@ Expõe um IP externo para receber o tráfego. Esse tráfego é controlado por um
 
 > Para fazer um conjunto de Pods é necessário o uso de selectors. Ou seja, um Pod vai ter um selector e quando for criado o LoadBalancer poderá ser setado para que tipo de aplicação ele devera encaminhar o tráfego
 
+# Comandos
+
+Comando para aplicar as alterações de um arquivo e criar um pod:
+```
+kubectl apply -f <file/path/pod.yaml>
+```
+
+Comando para pegar os Deployments criados:
+```
+kubectl get deployments
+```
+
+Comando para pegar os Pods criados:
+```
+kubectl get pods
+```
+
+Comando para pegar os Services criados:
+```
+kubectl get services
+```
+
+Comando que retorna os logs de um pod:
+```
+kubectl logs <pod-name>
+```
+
+Comando para criação de deployment:
+```
+kubectl create deployment <deployment-name> --image=<image-name>
+```
+
+Comando para criar um service expondo um deployment:
+```
+kubectl expose deployment <deployment-name> --type=<service-type> --port=<container-port>
+```
+
+Comando para testar *service*:
+```
+minikube service <service-name>
+```
+
+Comando para deletar todos os *deployments*:
+```
+kubectl delete deployments --all
+```
