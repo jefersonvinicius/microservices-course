@@ -84,3 +84,8 @@ Comando para deletar todos os *deployments*:
 ```
 kubectl delete deployments --all
 ```
+
+Comando para deletar um pod, deployment ou service:
+```
+kubectl delete <pods|services|deployments> <name>
+```
