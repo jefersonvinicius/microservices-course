@@ -40,9 +40,9 @@ Expõe um IP externo para receber o tráfego. Esse tráfego é controlado por um
 
 # Comandos
 
-Comando para aplicar as alterações de um arquivo e criar um pod:
+Comando para aplicar as alterações de um arquivo:
 ```
-kubectl apply -f <file/path/pod.yaml>
+kubectl apply -f <to/path/file.yaml>
 ```
 
 Comando para pegar os Deployments criados:
