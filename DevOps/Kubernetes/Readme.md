@@ -89,3 +89,8 @@ Comando para deletar um pod, deployment ou service:
 ```
 kubectl delete <pods|services|deployments> <name>
 ```
+
+Comando para criar um 'segredo':
+```
+kubectl create secret generic <secret-name> --from-literal=password='<password>'
+```
