@@ -98,3 +98,15 @@ kubectl create secret generic <secret-name> --from-literal=password='<password>'
 # Kubernetes no GCP
 
 Após a criação de um cluster no GCP é necessário conectar o `kubectl` ao servidores do GCP.
+
+## Upgrade do cluster
+Quando um determinado cluster faltar recursos para subir os pods você pode fazer um upgrade nele adicionando mais `node pool`
+
+> Um **node pool** é um grupo de nodes dentro de um cluster, onde todos tem a mesma configuração
+
+## Gerenciamento de recursos
+O Kubernetes possibilita a configuração de quanto um determinado pod vai consumir seja de CPU, memória, etc...
+Essa configuração é informado nos arquivos yaml através de `request` (solitações).
+
+## Limitando a utilização de recursos
+Enquanto as request define o mínimo que um pod precisa para subir, os `limits` informa qual o máximo de recursos consumidos por um pod. É importante notar que quando o limite de *CPU* é alcançado por um pod o Kubernetes vai diminuir sua atividade para não passar o máximo configurado, entretanto, quando o limite de *Memória* é atingido, o Kubernetes irá matar o seu pod e subir denovo.
