@@ -94,3 +94,7 @@ Comando para criar um 'segredo':
 ```
 kubectl create secret generic <secret-name> --from-literal=password='<password>'
 ```
+
+# Kubernetes no GCP
+
+Após a criação de um cluster no GCP é necessário conectar o `kubectl` ao servidores do GCP.

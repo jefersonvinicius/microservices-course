@@ -48,7 +48,7 @@ docker stop <container-id>
 
 ```
 //  Remove o container
-docker rm <container -id> -f
+docker rm <container-id> -f
 
 // Remove todos os containers
 sudo docker rm $(docker ps -a -q) -f
