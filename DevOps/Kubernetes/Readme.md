@@ -95,6 +95,11 @@ Comando para criar um 'segredo':
 kubectl create secret generic <secret-name> --from-literal=password='<password>'
 ```
 
+Comando que cria um *pod* e um *service*:
+```
+kubectl run <name> --image=<image> --requests=cpu=200m --expose --port 80
+```
+
 # Kubernetes no GCP
 
 Após a criação de um cluster no GCP é necessário conectar o `kubectl` ao servidores do GCP.
@@ -110,3 +115,5 @@ Essa configuração é informado nos arquivos yaml através de `request` (solita
 
 ## Limitando a utilização de recursos
 Enquanto as request define o mínimo que um pod precisa para subir, os `limits` informa qual o máximo de recursos consumidos por um pod. É importante notar que quando o limite de *CPU* é alcançado por um pod o Kubernetes vai diminuir sua atividade para não passar o máximo configurado, entretanto, quando o limite de *Memória* é atingido, o Kubernetes irá matar o seu pod e subir denovo.
+
+## Usando Autoscaler
