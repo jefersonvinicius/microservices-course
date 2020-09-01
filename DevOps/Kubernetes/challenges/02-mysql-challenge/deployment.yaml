@@ -12,12 +12,21 @@ spec:
       labels:
         app: mysql-db
     spec:
+      volumes:
+        - name: mysql-db-storage
+          persistentVolumeClaim:
+            claimName: mysql-db-volume
       containers:
         - name: mysql
           image: mysql:5.7
+          args:
+            - "--ignore-db-dir=lost+found"
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-db-password
                   key: password
+          volumeMounts:
+            - mountPath: "/var/lib/mysql"
+              name: mysql-db-storage
