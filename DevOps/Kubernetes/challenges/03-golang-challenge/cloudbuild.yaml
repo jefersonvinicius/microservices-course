@@ -2,3 +2,5 @@ steps:
   - id: "Running tests"
     name: "gcr.io/cloud-builders/go"
     args: ["test", "DevOps/Kubernetes/challenges/03-golang-challenge/src/handlers"]
+    env:
+      - 'GOPATH=DevOps/DevOps/Kubernetes/challenges/03-golang-challenge/'
