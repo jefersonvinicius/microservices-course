@@ -1,6 +1,16 @@
 steps:
   - id: "Running tests"
     name: "gcr.io/cloud-builders/go"
-    args: ["test", "./DevOps/Kubernetes/challenges/03-golang-challenge/src/handlers"]
+    args: ["test", "./handlers"]
     env:
       - 'GOPATH=DevOps/DevOps/Kubernetes/challenges/03-golang-challenge/'
+    dir: "/DevOps/Kubernetes/challenges/03-golang-challenge/src/"
+
+  - id: "Build program image"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "jefersonvinicius/golang-challenge", "."]
+    dir: "/DevOps/Kubernetes/challenges/03-golang-challenge/"
+
+  - id: "Running program image"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["run", "-d", "jefersonvinicius/golang-challenge"]
