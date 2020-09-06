@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golang-app
+  labels:
+    app: golang
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: golang
+  template:
+    metadata:
+      labels:
+        app: golang
+    spec:
+      containers:
+        - name: golang
+          image: jefersonvinicius/kubernetes-golang-challenge
+          ports:
+            - containerPort: 8000
