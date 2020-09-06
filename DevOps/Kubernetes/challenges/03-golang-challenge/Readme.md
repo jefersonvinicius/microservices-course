@@ -1,4 +1,4 @@
 # Desafio 3 - Go Lang
 
-Link da Imagem: [jefersonvinicius/nginx-challenge](https://hub.docker.com/repository/docker/jefersonvinicius/nginx-challenge)
+Link da Imagem: [jefersonvinicius/kubernetes-golang-challenge](https://hub.docker.com/repository/docker/jefersonvinicius/kubernetes-golang-challenge)
 
