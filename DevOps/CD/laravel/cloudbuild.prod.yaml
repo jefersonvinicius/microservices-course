@@ -58,7 +58,3 @@ steps:
     - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-docker-laravel'
   dir: "DevOps/CD/laravel"
 
-- id: "Clearing configuration"
-  name: 'gcr.io/cloud-builders/docker'
-  args: ['exec', '-t', 'app', '/var/www/artisan', 'config:clear']
-
