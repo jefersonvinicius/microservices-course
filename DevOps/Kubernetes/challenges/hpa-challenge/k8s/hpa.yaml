@@ -1,0 +1,13 @@
+# https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/#appendix-other-possible-scenarios
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: go-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: go-hpa
+  minReplicas: 1
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 15
