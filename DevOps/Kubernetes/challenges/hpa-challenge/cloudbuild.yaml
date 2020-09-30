@@ -4,5 +4,5 @@ steps:
   name: 'gcr.io/cloud-builders/go'
   args: ['test', './calc']
   env:
-    - 'GOPATH=DevOps/Kubernetes/challenges/hpa-challenge/src'
+    - 'GOPATH=DevOps/Kubernetes/challenges/hpa-challenge/src/'
 
