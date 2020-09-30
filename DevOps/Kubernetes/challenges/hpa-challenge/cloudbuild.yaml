@@ -1,0 +1,6 @@
+steps:
+  
+- id: "Running tests"
+  name: 'gcr.io/cloud-builders/go'
+  args: ['test']
+  dir: "DevOps/Kubernetes/challenges/hpa-challenge/src"
