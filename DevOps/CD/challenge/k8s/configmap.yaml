@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: go-lang-app-conf
+data:
+  env: |
+    MY_EXAMPLE_CONFIG_FIELD=configvalue

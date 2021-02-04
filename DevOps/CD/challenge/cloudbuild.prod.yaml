@@ -13,3 +13,11 @@ steps:
 - id: "Executando programa"
   name: 'gcr.io/cloud-builders/docker'
   args: ['run', 'gochallenge']
+
+- id: "Building image from Dockerfile"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/golang-app:$SHORT_SHA', '-f', 'Dockerfile', '.'] 
+
+- id: "Pushing image"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/golang-app:$SHORT_SHA']

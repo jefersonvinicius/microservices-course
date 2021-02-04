@@ -1,20 +1,45 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app
+  name: golang-app
 
 spec:
   selector:
     matchLabels:
-      app: app
+      golang-app: golang-app
 
   template:
     metadata:
       labels: 
-        app: app
+        golang-app: golang-app
 
     spec:
       containers:
-        - name: app
-          image: img-app-deployment
+      - name: golang-app
+        image: img-app-deployment
+
+        env:
+          - name: SECRET_VALUE
+            valueFrom:
+              secretKeyRef:
+                name: golang-secret-value
+                key: password
+
+        envFrom:
+          - configMapRef:
+              name: go-lang-app-conf
+        
+        volumeMounts:
+        - name: go-lang-app-conf-volume
+          mountPath: /app/src/.env
+          subPath: .env
+        
+      volumes:
+      - name: go-lang-app-conf-volume
+        configMap:
+          name: go-lang-app-conf
+          items:
+            - key: env
+              path: .env
+
 
