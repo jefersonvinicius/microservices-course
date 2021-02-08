@@ -4,15 +4,13 @@ steps:
 #   name: 'gcr.io/cloud-builders/docker'
 #   args: ['build', '-t', 'gochallenge', 'DevOps/CD/challenge/']
 
-# - id: "Executando testes"
-#   name: 'gcr.io/cloud-builders/go'
-#   args: ['test', '-v', './calculator']
-#   env: ['GOPATH=DevOps/CD/challenge/src']
-#   dir: 'DevOps/CD/challenge/src'
 
-# - id: "Executando programa"
-#   name: 'gcr.io/cloud-builders/docker'
-#   args: ['run', 'gochallenge']
+
+- id: "Executando testes"
+  name: 'gcr.io/cloud-builders/go'
+  args: ['test', '-v', './calculator']
+  env: ['GOPATH=DevOps/CD/challenge/src']
+  dir: 'DevOps/CD/challenge/src'
 
 - id: "Building image from Dockerfile"
   name: 'gcr.io/cloud-builders/docker'
@@ -22,3 +20,7 @@ steps:
 - id: "Pushing image"
   name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/golang-app:$SHORT_SHA']
+
+- id: "Executando programa"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['run', 'gcr.io/$PROJECT_ID/golang-app:$SHORT_SHA']
