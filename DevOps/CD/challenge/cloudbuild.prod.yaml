@@ -16,7 +16,7 @@ steps:
 
 - id: "Building image from Dockerfile"
   name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/golang-app:$SHORT_SHA', '-f', 'DevOps/CD/challenge/Dockerfile.prod', '.'] 
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/golang-app:$SHORT_SHA', '-f', 'Dockerfile.prod', '.'] 
   dir: 'DevOps/CD/challenge'
 
 - id: "Pushing image"
