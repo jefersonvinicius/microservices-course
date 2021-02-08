@@ -1,5 +1,6 @@
 FROM golang:1.14-alpine
 
+ENV GOPATH=/app
 RUN apk update
 RUN apk add git
 
@@ -9,7 +10,7 @@ COPY . /app
 
 WORKDIR /app
 
-ENV GOPATH=/app
+RUN ls ./src
 
 RUN go get github.com/joho/godotenv
 
