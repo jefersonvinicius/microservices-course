@@ -1,18 +1,18 @@
 steps:
 
-- id: "Fazendo build do programa"
-  name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gochallenge', 'DevOps/CD/challenge/']
+# - id: "Fazendo build do programa"
+#   name: 'gcr.io/cloud-builders/docker'
+#   args: ['build', '-t', 'gochallenge', 'DevOps/CD/challenge/']
 
-- id: "Executando testes"
-  name: 'gcr.io/cloud-builders/go'
-  args: ['test', '-v', './calculator']
-  env: ['GOPATH=DevOps/CD/challenge/src']
-  dir: 'DevOps/CD/challenge/src'
+# - id: "Executando testes"
+#   name: 'gcr.io/cloud-builders/go'
+#   args: ['test', '-v', './calculator']
+#   env: ['GOPATH=DevOps/CD/challenge/src']
+#   dir: 'DevOps/CD/challenge/src'
 
-- id: "Executando programa"
-  name: 'gcr.io/cloud-builders/docker'
-  args: ['run', 'gochallenge']
+# - id: "Executando programa"
+#   name: 'gcr.io/cloud-builders/docker'
+#   args: ['run', 'gochallenge']
 
 - id: "Building image from Dockerfile"
   name: 'gcr.io/cloud-builders/docker'
