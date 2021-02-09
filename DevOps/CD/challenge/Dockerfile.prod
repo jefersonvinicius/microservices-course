@@ -6,13 +6,9 @@ RUN apk add git
 
 RUN mkdir /app
 
-RUN ls
-
 COPY . /app
 
 WORKDIR /app
-
-RUN ls ./src
 
 RUN go get github.com/joho/godotenv
 
