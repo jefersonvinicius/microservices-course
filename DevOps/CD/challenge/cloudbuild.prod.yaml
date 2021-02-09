@@ -27,7 +27,7 @@ steps:
   args:
     - '-c'
     - |
-      sed 's#img-app-deployment#gcr.io/$PROJECT_ID/golang-app:$SHORT_SHA#g' DevOps/CD/challenge/.k8s/deployment.yaml > DevOps/CD/challenge/.k8s/deployment-new.yaml;
-      cat DevOps/CD/challenge/.k8s/deployment-new.yaml;
+      sed 's#img-app-deployment#gcr.io/$PROJECT_ID/golang-app:$SHORT_SHA#g' DevOps/CD/challenge/k8s/deployment.yaml > DevOps/CD/challenge/k8s/deployment-new.yaml;
+      cat DevOps/CD/challenge/k8s/deployment-new.yaml;
 
 
