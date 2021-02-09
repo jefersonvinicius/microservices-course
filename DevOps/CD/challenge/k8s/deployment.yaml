@@ -17,6 +17,8 @@ spec:
       containers:
       - name: golang-app
         image: img-app-deployment
+        ports:
+        - containerPort: 8080
 
         env:
           - name: SECRET_VALUE

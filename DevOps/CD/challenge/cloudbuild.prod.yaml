@@ -21,6 +21,13 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/golang-app:$SHORT_SHA']
 
-- id: "Executando programa"
-  name: 'gcr.io/cloud-builders/docker'
-  args: ['run', 'gcr.io/$PROJECT_ID/golang-app:$SHORT_SHA']
+- id: "Adjusting deployment files - k8s"
+  name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: '/bin/sh'
+  args:
+    - '-c'
+    - |
+      sed 's#img-app-deployment#gcr.io/$PROJECT_ID/golang-app:$SHORT_SHA#g' DevOps/CD/challenge/.k8s/deployment.yaml > k8s/app/deployment-new.yaml;
+      cat k8s/app/deployment-new.yaml;
+
+
