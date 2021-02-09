@@ -30,4 +30,13 @@ steps:
       sed 's#img-app-deployment#gcr.io/$PROJECT_ID/golang-app:$SHORT_SHA#g' DevOps/CD/challenge/k8s/deployment.yaml > DevOps/CD/challenge/k8s/deployment-new.yaml;
       cat DevOps/CD/challenge/k8s/deployment-new.yaml;
 
+- id: "Deploying k8s"
+  name: 'gcr.io/cloud-builders/gcloud'
+  args:
+    - 'apply'
+    - '-f'
+    - 'DevOps/CD/challenge/k8s/deployment-new.yaml'
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=cd-challenge-cluster'
 
