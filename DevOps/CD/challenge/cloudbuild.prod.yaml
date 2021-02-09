@@ -31,7 +31,7 @@ steps:
       cat DevOps/CD/challenge/k8s/deployment-new.yaml;
 
 - id: "Deploying k8s"
-  name: 'gcr.io/cloud-builders/gcloud'
+  name: 'gcr.io/cloud-builders/kubectl'
   args:
     - 'apply'
     - '-f'
