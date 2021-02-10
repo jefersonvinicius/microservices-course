@@ -33,7 +33,7 @@ spec:
         
         volumeMounts:
         - name: go-lang-app-conf-volume
-          mountPath: ../src/.env
+          mountPath: /src/.env
           subPath: .env
         
       volumes:
