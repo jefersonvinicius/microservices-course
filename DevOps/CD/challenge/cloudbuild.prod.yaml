@@ -1,11 +1,4 @@
 steps:
-
-# - id: "Fazendo build do programa"
-#   name: 'gcr.io/cloud-builders/docker'
-#   args: ['build', '-t', 'gochallenge', 'DevOps/CD/challenge/']
-
-
-
 - id: "Executando testes"
   name: 'gcr.io/cloud-builders/go'
   args: ['test', '-v', './calculator']
