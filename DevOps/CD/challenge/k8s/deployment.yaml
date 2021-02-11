@@ -27,9 +27,9 @@ spec:
                 name: golang-secret-value
                 key: password
 
-        envFrom:
-          - configMapRef:
-              name: go-lang-app-conf
+        # envFrom:
+        #   - configMapRef:
+        #       name: go-lang-app-conf
         
         volumeMounts:
         - name: go-lang-app-conf-volume
