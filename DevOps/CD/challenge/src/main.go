@@ -43,7 +43,7 @@ func handleRequest(w http.ResponseWriter, request *http.Request) {
 		secretvalue = "Não configurado"
 	}
 
-	fmt.Fprintf(w, "%d + %d = %d\n", aNumber, aNumber, calculator.Sum(aNumber, bNumber))
+	fmt.Fprintf(w, "%d + %d = %d\n", aNumber, bNumber, calculator.Sum(aNumber, bNumber))
 	fmt.Fprintf(w, "CONFIG VALUE: %s\n", os.Getenv("MY_EXAMPLE_CONFIG_FIELD"))
 	fmt.Fprintf(w, "SECRET VALUE: %s\n", secretvalue)
 
