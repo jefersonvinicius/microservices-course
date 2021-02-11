@@ -24,13 +24,15 @@ func handleRequest(w http.ResponseWriter, request *http.Request) {
 	aNumber, aErr := strconv.Atoi(aParam)
 	bNumber, bErr := strconv.Atoi(bParam)
 
+	hostname := request.Host
+	link := hostname + "?a=10&b=50"
 	if aErr != nil {
-		fmt.Fprintf(w, "ERROR: %s", aErr.Error())
+		fmt.Fprintf(w, "Informe os parâmetros a e b na url\nEXEMPLO: %s", link)
 		return
 	}
 
 	if bErr != nil {
-		fmt.Fprintf(w, "ERROR: %s", bErr.Error())
+		fmt.Fprintf(w, "Informe os parâmetros a e b na url\nEXEMPLO: %s", link)
 		return
 	}
 
